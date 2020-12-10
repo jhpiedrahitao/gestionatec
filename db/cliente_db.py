@@ -1,6 +1,5 @@
 from typing import  Dict
 from pydantic import BaseModel
-from datetime import datetime
 
 class ClienteInDB(BaseModel):
     documento: int
@@ -13,7 +12,7 @@ class ClienteInDB(BaseModel):
     correo: str
     detalle: str
 
-database_clientes = Dict[str, ClienteInDB]
+database_clientes: Dict[str, ClienteInDB]
 
 database_clientes={
     "800433422": ClienteInDB(**{"documento": 800433422,
