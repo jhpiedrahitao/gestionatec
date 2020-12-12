@@ -2,6 +2,7 @@ from db import cliente_db
 from db.cliente_db import ClienteInDB
 from models.cliente_model import Cliente
 from datetime import date
+from typing import  Dict
 from fastapi import FastAPI, HTTPException
 
 api = FastAPI()
@@ -45,6 +46,14 @@ async def get_cliente(documento:str):
     else:
         cliente=Cliente(**cliente_in_db.dict())
         return cliente
+
+@api.get("/cliente/registroGetAll")
+async def get_clientes():
+    clientes_in_db=cliente_db.get_all_clientes()
+    clientes={}
+    for k,v in clientes_in_db.items():
+        clientes[k]=Cliente(**v.dict())
+    return clientes
 
 @api.get("/")
 async def root():

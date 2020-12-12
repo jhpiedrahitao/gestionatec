@@ -104,3 +104,5 @@ def save_cliente(cliente_in_db: ClienteInDB):
     database_clientes[str(cliente_in_db.documento)] = cliente_in_db
     return cliente_in_db  
 
+def get_all_clientes():
+    return database_clientes
