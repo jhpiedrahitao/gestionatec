@@ -31,7 +31,7 @@ async def update_cliente(cliente: Cliente):
     else:
         return db_response
 
-@api.delete("/cliente/registroDel")
+@api.delete("/cliente/registroDel/{documento}")
 async def delete_cliente(documento: str):
     db_response=cliente_db.delete_cliente(documento)
     if db_response==None:

@@ -78,6 +78,7 @@ database_clientes={
                                 "ciudad": "BOGOTA",
                                 "correo": "PAOLARAMIREZ@GMAIL.COM",
                                 "detalle": ""}),
+
 }
 
 def get_cliente(documento: str):
